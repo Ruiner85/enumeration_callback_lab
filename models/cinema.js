@@ -19,7 +19,7 @@ Cinema.prototype.hasFilmsOfYear = function(filmYear) {
 };
 
 Cinema.prototype.allFilmsLengthOver = function(filmLength) {
-  return this.films.every(film => film.length > filmLength);
+  return this.films.every(film => film.length >= filmLength);
 };
 
 Cinema.prototype.lengthOfAllFilms = function() {
