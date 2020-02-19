@@ -42,6 +42,8 @@ describe('Cinema', function(){
     assert.strictEqual(cinema.allFilmsLengthOver(106), false);
   })
 
-  it('should be able to calculate the total running time of all films')
+  it('should be able to calculate the total running time of all films', function(){
+    assert.strictEqual(cinema.lengthOfAllFilms(), 363)
+  })
 
 });
