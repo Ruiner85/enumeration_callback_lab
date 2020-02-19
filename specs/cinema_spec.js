@@ -29,21 +29,24 @@ describe('Cinema', function(){
   });
 
   it('should be able to filter films by genre', function(){
-    assert.deepStrictEqual(cinema.filterByGenre('Adventure'), [film1, film2])
+    assert.deepStrictEqual(cinema.filterByProperty('genre','Adventure'), [film1, film2])
   });
 
   it('should be to check whether there are some films from a particular year', function() {
     assert.strictEqual(cinema.hasFilmsOfYear('2008'), true)
     assert.strictEqual(cinema.hasFilmsOfYear('3005'), false)
-  })
+  });
 
   it('should be able to check whether all films are over a particular length', function() {
     assert.strictEqual(cinema.allFilmsLengthOver(100), true);
     assert.strictEqual(cinema.allFilmsLengthOver(106), false);
-  })
+  });
 
   it('should be able to calculate the total running time of all films', function(){
     assert.strictEqual(cinema.lengthOfAllFilms(), 363)
-  })
+  });
 
+  it('should be able to filter films by year', function(){
+    assert.deepStrictEqual(cinema.filterByProperty('year','2008'), [film3]);
+  });
 });
