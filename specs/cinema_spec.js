@@ -37,7 +37,10 @@ describe('Cinema', function(){
     assert.strictEqual(cinema.hasFilmsOfYear('3005'), false)
   })
 
-  it('should be able to check whether all films are over a particular length')
+  it('should be able to check whether all films are over a particular length', function() {
+    assert.strictEqual(cinema.allFilmsLengthOver(100), true);
+    assert.strictEqual(cinema.allFilmsLengthOver(106), false);
+  })
 
   it('should be able to calculate the total running time of all films')
 
