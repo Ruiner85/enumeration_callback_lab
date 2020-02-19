@@ -20,9 +20,13 @@ describe('Cinema', function(){
     assert.deepStrictEqual(cinema.films, films);
   });
 
-  it('should be able to get a list of film titles')
+  it('should be able to get a list of film titles', function (){
+    assert.deepStrictEqual(cinema.getFilmTitles(), ['Gladiator', 'Labyrinth', 'In Bruges'])
+  });
 
-  it('should be able to find a film by title')
+  it('should be able to find a film by title', function(){
+    assert.deepStrictEqual(cinema.findFilm('Labyrinth'), film2)
+  })
 
   it('should be able to filter films by genre')
 
