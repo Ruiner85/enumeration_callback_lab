@@ -32,7 +32,10 @@ describe('Cinema', function(){
     assert.deepStrictEqual(cinema.filterByGenre('Adventure'), [film1, film2])
   });
 
-  it('should be to check whether there are some films from a particular year')
+  it('should be to check whether there are some films from a particular year', function() {
+    assert.strictEqual(cinema.hasFilmsOfYear('2008'), true)
+    assert.strictEqual(cinema.hasFilmsOfYear('3005'), false)
+  })
 
   it('should be able to check whether all films are over a particular length')
 
