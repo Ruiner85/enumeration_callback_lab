@@ -9,7 +9,7 @@ describe('Cinema', function(){
   let cinema;
 
   beforeEach(function() {
-    film1 = new Film('Gladiator', 'Action', '2000', 155);
+    film1 = new Film('Gladiator', 'Adventure', '2000', 155);
     film2 = new Film('Labyrinth', 'Adventure', '1986', 101);
     film3 = new Film('In Bruges', 'Comedy', '2008', 107);
     films = [film1, film2, film3];
@@ -26,9 +26,11 @@ describe('Cinema', function(){
 
   it('should be able to find a film by title', function(){
     assert.deepStrictEqual(cinema.findFilm('Labyrinth'), film2)
-  })
+  });
 
-  it('should be able to filter films by genre')
+  it('should be able to filter films by genre', function(){
+    assert.deepStrictEqual(cinema.filterByGenre('Adventure'), [film1, film2])
+  });
 
   it('should be to check whether there are some films from a particular year')
 
